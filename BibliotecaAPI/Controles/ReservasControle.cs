@@ -8,6 +8,18 @@ namespace BibliotecaAPI.Controles
     [Route("ReservasControle")]
     public class ReservasControle
     {
+        private static readonly int[] identificadores = new[]
+        {
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        };
+
+        private readonly ILogger<ReservasControle> _logger;
+
+        public ReservasControle(ILogger<ReservasControle> logger)
+        {
+            _logger = logger;
+        }
+
         [HttpPost("Cadastrar")]
         public HttpStatusCode Cadastrar(Reservas reservas)
         {
